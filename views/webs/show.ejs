@@ -1,0 +1,22 @@
+<div class="container web">
+	<div class="col-xs-12">
+		<a class="web" href='/webs/<%=JSON.parse(web)._id%>'>
+		<%=JSON.parse(web).url%></a>
+		<%=JSON.parse(web).genre%>
+		<%if (JSON.parse(web).filters.length > 0) {%>
+			<%for (var f in JSON.parse(web).filters) {%>
+				<p><%=JSON.parse(web).filters[f].pattern%></p>
+				<p><%=JSON.parse(web).filters[f].type%></p>
+				<form method="put" action="/webs/<%=JSON.parse(web)._id%>/<%=JSON.parse(web).filters[f].id%>">
+				    <button class="btn btn-info" type="submit">Update filter</button>
+				</form>
+			<%}%>
+		<%}%>
+		<form method="put" action="/webs/<%=JSON.parse(web)._id%>">
+		    <button class="btn btn-info" type="submit">Add new filter</button>
+		</form>
+		<form method="post" action="/webs/<%=JSON.parse(web)._id%>?_method=delete">
+		    <button class="btn btn-danger" type="submit" onClick="return confirm('Delete: <%=JSON.parse(web).url%>. Are you sure? ');">Delete web</button>
+		</form>
+	</div>
+</div>
