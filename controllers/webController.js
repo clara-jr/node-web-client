@@ -79,6 +79,7 @@ exports.addFilterToWeb = function (req, res, next) {
     pattern: req.body.pattern,
     filterType: req.body.filterType
   };
+  console.log("addFilterToWeb: " + form);
   request.put(
     {url:'http://localhost:8080/webs/'+req.params.webId, form: form},
     function optionalCallback(err, httpResponse, body) {

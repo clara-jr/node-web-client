@@ -1,4 +1,4 @@
-## node-api-rest
+## node-web-client
 
 ### Dependencies
 
