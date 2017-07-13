@@ -99,7 +99,7 @@ exports.formUpdateFilterOfWeb = function (req, res, next) {
       if (err) {
         return console.error('get failed:', err);
       }
-      console.log('Get successful! Server responded with:', body);
+      console.log('Get filter successful! Server responded with:', body);
       res.render('webs/filter', {webId: req.params.webId, filter: body});
     }
   );

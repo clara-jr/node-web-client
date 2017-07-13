@@ -1,5 +1,5 @@
 <div class="container filter">
-	<form action="/webs/<%=webId%>/<%=JSON.parse(filter).id%>" method="post" class="form-horizontal">
+	<form action="/webs/<%=webId%>/<%=JSON.parse(filter)._id%>?_method=put" method="post" class="form-horizontal">
 		<p>Update the filter:</p>
 		<div class="form-group">
 		    <label class="control-label col-sm-2" for="track">Pattern:</label>
@@ -14,5 +14,8 @@
 		    </div>
 		</div>
 	  	<button class="btn btn-info" type="submit">Update</button>
+	</form>
+	<form method="post" action="/webs/<%=webId%>/<%=JSON.parse(filter)._id%>?_method=delete">
+		<button class="btn btn-danger" type="submit" onClick="return confirm('Delete: <%=JSON.parse(filter).pattern%>. Are you sure? ');">Delete filter</button>
 	</form>
 </div>

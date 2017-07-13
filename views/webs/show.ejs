@@ -7,9 +7,7 @@
 			<%for (var f in JSON.parse(web).filters) {%>
 				<p><%=JSON.parse(web).filters[f].pattern%></p>
 				<p><%=JSON.parse(web).filters[f].type%></p>
-				<form method="put" action="/webs/<%=JSON.parse(web)._id%>/<%=JSON.parse(web).filters[f].id%>">
-				    <button class="btn btn-info" type="submit">Update filter</button>
-				</form>
+				<a href="/webs/<%=JSON.parse(web)._id%>/<%=JSON.parse(web).filters[f]._id%>" class="btn btn-info" type="submit">Update filter</a>
 			<%}%>
 		<%}%>
 		<form method="post" action="/webs/<%=JSON.parse(web)._id%>?_method=put">
