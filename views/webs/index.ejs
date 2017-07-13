@@ -10,9 +10,11 @@
 					<%=JSON.parse(webs)[w].url%></a>
 					<%=JSON.parse(webs)[w].genre%>
 					<%if (JSON.parse(webs)[w].filters.length > 0) {%>
+						</br>
+						<b>Filters:</b>
 						<%for (var f in JSON.parse(webs)[w].filters) {%>
-							<p><%=JSON.parse(webs)[w].filters[f].pattern%></p>
-							<p><%=JSON.parse(webs)[w].filters[f].type%></p>
+							</br>
+							Pattern: <%=JSON.parse(webs)[w].filters[f].pattern%> Type: <%=JSON.parse(webs)[w].filters[f].type%>
 						<%}%>
 					<%}%>
 				</div>
