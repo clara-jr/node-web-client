@@ -25,19 +25,17 @@ exports.login = function(req, res) {
         if (req.body.login === "admin" && req.body.password === "password") {
             req.session.user = {id:req.body.login};
             console.log(req.session.user);
-            res.redirect('/webs');
         } else {
             req.session.errors = {"message": 'Incorrect user or password'};
             console.log(req.session.errors);
             console.log(req.session.errors.message);
-            res.redirect('/');
         }
     } else {
         req.session.errors = {"message": 'Required inputs can not be empty'};
         console.log(req.session.errors);
         console.log(req.session.errors.message);
-        res.redirect('/');
     }
+    res.redirect('/');
 };
 
 // DELETE /logout   -- Destruir sesion 
